@@ -1,0 +1,55 @@
+
+<!-- Create New Event Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="card shadow modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Create New Event {{ pagetitle }}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="event_title">Title</label>
+                    <input type="text" class="form-control" id="event_title" name="event_title">
+                </div>
+                <div class="form-group">
+                    <label for="event_description">Description</label>
+                    <textarea class="form-control" id="event_description" name="event_description"
+                        rows="4"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="start_date">Start Date</label>
+                        <input type="date" class="form-control" id="start_date" name="start_date">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="start_time">Start Event time: </label>
+                        <input type="time" class="form-control" id="start_time" name="start_time" value="00:00">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="end_date">End Date</label>
+                        <input type="date" class="form-control" id="end_date" name="end_date">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="end_time">End Event time: </label>
+                        <input type="time" class="form-control" id="end_time" name="end_time" value="12:00">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Create Event</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+</div>

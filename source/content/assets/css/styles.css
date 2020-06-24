@@ -1,0 +1,54 @@
+/* Hi there */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    outline: none;
+}
+
+/* Light Theme */
+body{
+    background-color: #fff;
+    color: #121212;
+}
+
+/* Dark Theme */
+/* body{
+    background-color: #212121;
+    color: #fff;
+} */
+
+.card{
+    border-radius: 10px;
+}
+
+.onCardHover:hover{
+    /* box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.nav-item:hover{
+    border-radius: 100%;
+    background-color: #f8f9fa;
+}
+
+.login-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 50vh;
+}

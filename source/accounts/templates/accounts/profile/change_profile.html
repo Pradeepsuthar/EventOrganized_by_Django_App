@@ -1,0 +1,27 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid bg-transparent py-0">
+    <div class="card container">
+
+       <div class="jumbotron jumbotron-fluid bg-transparent">
+        <h4><b>{% trans 'Change profile' %}</b></h4><hr>
+
+        <form method="post">
+
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            <button class="btn btn-primary">{% trans 'Change' %}</button>
+
+        </form>
+       </div>
+
+    </div>
+</div>
+
+{% endblock %}

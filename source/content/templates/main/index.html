@@ -1,0 +1,77 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load i18n %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+
+<div class="jumbotron jumbotron-fluid bg-transparent py-0">
+    <div class="container">
+        <h3 class="ml-2 text-dark">All Events</h3><hr>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+            <div class="col">
+                <div class="card bg-transparent mb-3 onCardHover">
+                    <div class="card-header bg-transparent">
+                        <h5 class="card-title my-auto float-left">Dark card title</h5>
+
+                        <div class="dropdown my-auto float-right">
+                            <a class="border-0 bg-transparent" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <svg class="bi bi-three-dots-vertical" width="1.1em" height="1.1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right rounded-0 shadow-sm">
+                                <h6 class="dropdown-header">Action</h6>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">
+                                    <svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                      </svg> Edit
+                                    </a>
+                                <a class="dropdown-item" href="#">
+                                    <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                      </svg> Delete
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+
+                        <div class="my-auto">
+                            <p class="float-left my-auto">23 June, 2020</p>
+                            <p class="float-right my-auto">28 June, 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+</div>
+{% else %}
+
+<div class="jumbotron jumbotron-fluid bg-transparent">
+
+    <div class="login-card">
+        <div class="card border-0">
+            <p class="lead"> Please Signin to use more features.</p>
+            <a href="{% url 'accounts:log_in' %}" class="btn btn-primary border shadow-sm">Signin</a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endif %}
+
+{% endblock %}
