@@ -1,4 +1,4 @@
-# Simple Django Login and Registration
+# Event Organized App
 
 An example of Django project with basic user functionality.
 
